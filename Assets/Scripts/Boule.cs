@@ -132,7 +132,7 @@ public class Boule : MonoBehaviour
             enCharge = true;
             forceAppliquee += forceCharge * Vector3.forward;
             nbCharges--;
-            ControleurJeu.Instance.UpdateChargeUI(nbCharges);
+            ControleurJeu.Instance.GestionChargesUI.UpdateChargeUI(nbCharges);
         }
     }
 
@@ -150,7 +150,7 @@ public class Boule : MonoBehaviour
         if(nbCharges < 3)
         {
             nbCharges++;
-            ControleurJeu.Instance.UpdateChargeUI(nbCharges);
+            ControleurJeu.Instance.GestionChargesUI.UpdateChargeUI(nbCharges);
         }
     }
 }

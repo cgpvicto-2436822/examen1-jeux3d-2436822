@@ -17,7 +17,7 @@ public class ControleurJeu : MonoBehaviour
     [field:SerializeField, Tooltip("Référence aux contrôles du joueur.")]
     public PlayerInput Controles { get; private set; }
 
-    public Image[] chargesUI;
+    public GestionChargesUI GestionChargesUI;
 
     public bool estEnJeu { get; set; } = false;
 
@@ -30,29 +30,6 @@ public class ControleurJeu : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-
-        foreach (var charge in chargesUI)
-        {
-            charge.enabled = false;
-        }
-    }
-
-    public void UpdateChargeUI(int nbCharges)
-    {
-        if(nbCharges == 0)
-        {
-            foreach (var charge in chargesUI)
-            {
-                charge.enabled = false;
-            }
-        }
-        else
-        {
-            for (int i = 0; i < chargesUI.Length; i++)
-            {
-                chargesUI[i].enabled = i < nbCharges;
-            }
         }
     }
 }
